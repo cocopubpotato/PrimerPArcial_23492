@@ -1,6 +1,5 @@
 package com.example.primerparcial_23492
 
-import android.webkit.WebSettings
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -10,7 +9,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -36,7 +34,9 @@ import androidx.compose.ui.unit.sp
 @Composable
 
 
-fun Seleccion(){
+fun FinalS(){
+var selectedI = R.drawable.sonic
+var selectedN = "Sonic"
     Column(modifier = Modifier.fillMaxSize().padding(top = 8.dp).padding(bottom = 8.dp).background(Color(0xFF2DB1CD)),
         verticalArrangement = Arrangement.SpaceAround,
         horizontalAlignment = Alignment.CenterHorizontally
@@ -46,19 +46,10 @@ fun Seleccion(){
                 modifier = Modifier.size(20.dp))
             }
         //seleccion de personajes
-        Box(modifier = Modifier.background(Color.Black).padding(8.dp).fillMaxWidth().size(400.dp)){
-            Column() {
-                Row(modifier= Modifier.size(130.dp)) {
-                    Image(painter= painterResource(R.drawable.mii), contentDescription = "mii femenino") }
-                Row(modifier= Modifier.size(130.dp)) {
-                        Image(painter= painterResource(R.drawable.fireemblem), contentDescription = "byleth eisner",modifier=Modifier.border(width = 2.dp, color = Color.Gray))
-                        Spacer(modifier= Modifier.size(20.dp))
-                        Image(painter= painterResource(R.drawable.sergio_canales), contentDescription = "sergio canales") }
-                Row(modifier= Modifier.size(130.dp)) {
-                    Image(painter= painterResource(R.drawable.sonic), contentDescription = "sonic") }
-            }
+        Box(modifier = Modifier.background(Color.Black).padding(8.dp).fillMaxWidth().size(400.dp).align(Alignment.CenterHorizontally)){
+           Image(painter =painterResource(id= R.drawable.sonic) ,contentDescription="imagen seleccionada",contentScale= ContentScale.FillBounds)
         }
-        Text("Selecciona un personaje", color= Color.Yellow, fontSize = 18.sp, textAlign = TextAlign.Center)
+        Text("Seleccionaste a ${selectedN}", color= Color.Yellow, fontSize = 18.sp, textAlign = TextAlign.Center)
 
         Row() {
             // D PAD

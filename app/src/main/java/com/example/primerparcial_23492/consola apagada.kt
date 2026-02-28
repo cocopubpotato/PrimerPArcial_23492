@@ -33,7 +33,7 @@ import androidx.compose.ui.unit.sp
 
 fun Apagada(){
     Column(modifier = Modifier.fillMaxSize().padding(top = 8.dp).padding(bottom = 8.dp).background(Color(0xFF2DB1CD)),
-        verticalArrangement = Arrangement.SpaceEvenly,
+        verticalArrangement = Arrangement.SpaceAround,
         horizontalAlignment = Alignment.CenterHorizontally){
         Box(modifier = Modifier.align(Alignment.End).size(15.dp)) {
             Image(painter=painterResource(id=R.drawable.power), contentDescription = "power",contentScale = ContentScale.FillBounds,
@@ -54,16 +54,17 @@ fun Apagada(){
                     modifier = Modifier.size(25.dp).align(Alignment.BottomCenter))
             }
             //A and B
-            Box(modifier= Modifier.size(100.dp).align(Alignment.Bottom)){
-                Box(modifier=Modifier.background(Color.Blue).size(50.dp).align(Alignment.Center)){Text("A", textAlign = TextAlign.Center)}
+            Box(modifier= Modifier.size(100.dp)){
+                Box(modifier=Modifier.background(Color.Blue).size(50.dp).align(Alignment.Center)){Text("A", textAlign = TextAlign.Center,fontSize = 32.sp,color=Color.White)}
 
             }
-            Box(modifier= Modifier.size(100.dp).align(Alignment.Top)){
-                Box(modifier=Modifier.background(Color.Blue).size(50.dp).align(Alignment.Center)){Text("B", textAlign = TextAlign.Center)}
+            Box(modifier= Modifier.size(100.dp)){
+                Box(modifier=Modifier.background(Color.Blue).size(50.dp).align(Alignment.Center)){Text("B", textAlign = TextAlign.Center,fontSize = 32.sp,color=Color.White)}
             }
             }
-
-        Text("Nientiendo ISDN 5DS", color = Color.White, fontSize = 18.sp, modifier= Modifier.padding(bottom= 8.dp))
+        Box(modifier=Modifier.align(Alignment.CenterHorizontally)){
+            Text("Nientiendo ISDN 5DS", color = Color.White, fontSize = 18.sp, modifier= Modifier.padding(bottom= 8.dp))
+        }
     }
 
     }
