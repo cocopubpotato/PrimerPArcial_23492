@@ -1,9 +1,11 @@
 package com.example.primerparcial_23492
 
+import android.text.Layout
 import android.webkit.WebSettings
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.gestures.snapping.SnapPosition
 import androidx.compose.foundation.layout.Arrangement
 
 import androidx.compose.ui.res.painterResource
@@ -38,8 +40,8 @@ import androidx.compose.ui.unit.sp
 
 fun Seleccion(){
     Column(modifier = Modifier.fillMaxSize().padding(top = 8.dp).padding(bottom = 8.dp).background(Color(0xFF2DB1CD)),
-        verticalArrangement = Arrangement.SpaceAround,
-        horizontalAlignment = Alignment.CenterHorizontally
+    //    verticalArrangement = Arrangement.SpaceAround,
+ //       horizontalAlignment = Alignment.CenterHorizontally
     ){
         Box(modifier = Modifier.align(Alignment.End)) {
             Image(painter=painterResource(id=R.drawable.power), contentDescription = "power",contentScale = ContentScale.FillBounds,
@@ -49,11 +51,21 @@ fun Seleccion(){
         Box(modifier = Modifier.background(Color.Black).padding(8.dp).fillMaxWidth().size(400.dp)){
             Column() {
                 Row(modifier= Modifier.size(130.dp)) {
-                    Image(painter= painterResource(R.drawable.mii), contentDescription = "mii femenino") }
-                Row(modifier= Modifier.size(130.dp)) {
-                        Image(painter= painterResource(R.drawable.fireemblem), contentDescription = "byleth eisner",modifier=Modifier.border(width = 2.dp, color = Color.Gray))
-                        Spacer(modifier= Modifier.size(20.dp))
+                    Box(){
+                        Image(painter= painterResource(R.drawable.mii), contentDescription = "mii femenino") }
+                    }
+
+                Row(modifier= Modifier.size(130.dp), horizontalArrangement = Arrangement.SpaceEvenly) {
+                    Column(){
+                       Box(){
+                           Image(painter= painterResource(R.drawable.fireemblem), contentDescription = "byleth eisner",modifier=Modifier.border(width = 2.dp, color = Color.Gray))
+
+                       }
+                        Spacer(modifier= Modifier.size(120.dp))
+                    Box(){
                         Image(painter= painterResource(R.drawable.sergio_canales), contentDescription = "sergio canales") }
+
+                }}
                 Row(modifier= Modifier.size(130.dp)) {
                     Image(painter= painterResource(R.drawable.sonic), contentDescription = "sonic") }
             }
